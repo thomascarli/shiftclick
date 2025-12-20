@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Isometric blue cube -->
+  <!-- Top face -->
+  <polygon points="16,4 28,10 16,16 4,10" fill="#3086f8"/>
+  <!-- Left face -->
+  <polygon points="4,10 16,16 16,28 4,22" fill="#1b68cf"/>
+  <!-- Right face -->
+  <polygon points="16,16 28,10 28,22 16,28" fill="#0d3f82"/>
+</svg>
+
