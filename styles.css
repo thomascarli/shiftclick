@@ -1199,6 +1199,30 @@ body.cursor-hover .cursor-follower {
         padding: 1rem;
     }
     
+    .hero-title {
+        font-size: clamp(2.5rem, 15vw, 5rem);
+        /* Reduce edge fade on mobile */
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+    
     .about,
     .skills,
     .projects,
@@ -1217,6 +1241,28 @@ body.cursor-hover .cursor-follower {
     
     a {
         cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(2rem, 14vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+    
+    .cta-title {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+    
+    .page-title {
+        font-size: clamp(2.5rem, 14vw, 5rem);
     }
 }
 
