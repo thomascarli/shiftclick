@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initTiltEffect();
     initMouseTrail();
+    initTypewriter();
 });
 
 /* ================================================
@@ -402,5 +403,94 @@ function initMouseTrail() {
     }
     
     animate();
+}
+
+/* ================================================
+   TYPEWRITER EFFECT
+   ================================================ */
+
+function initTypewriter() {
+    const element = document.getElementById('typewriter');
+    if (!element) return;
+    
+    const words = [
+        'Strange',
+        'Memorable', 
+        'Weird',
+        'Bizarre',
+        'Unique',
+        'Odd',
+        'Peculiar',
+        'Fun',
+        'Funny'
+    ];
+    
+    let wordIndex = 0;
+    let charIndex = 1;
+    let isDeleting = false;
+    let isPaused = false;
+    let isWaitingToType = false;
+    
+    const typeSpeed = 280;        // Very slow, deliberate typing
+    const deleteSpeed = 150;      // Slower delete too
+    const pauseAfterWord = 3000;  // Pause to read the completed word
+    const pauseWithCursor = 1200; // Pause with just cursor before typing next word
+    
+    // Start with first word's first character visible
+    element.innerHTML = words[0].charAt(0);
+    
+    function updateText(text) {
+        // Use non-breaking space if empty to maintain line height
+        element.innerHTML = text || '&nbsp;';
+    }
+    
+    function type() {
+        const currentWord = words[wordIndex];
+        
+        // Pause after completing a word (before deleting)
+        if (isPaused) {
+            isPaused = false;
+            setTimeout(type, pauseAfterWord);
+            return;
+        }
+        
+        // Pause with empty/cursor before typing next word
+        if (isWaitingToType) {
+            isWaitingToType = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            charIndex = 0;
+            setTimeout(type, pauseWithCursor);
+            return;
+        }
+        
+        if (isDeleting) {
+            charIndex--;
+            
+            if (charIndex <= 0) {
+                // Show empty with just cursor, wait before starting next word
+                updateText('');
+                isDeleting = false;
+                isWaitingToType = true;
+                setTimeout(type, 100); // Brief moment then trigger wait
+                return;
+            }
+            
+            updateText(currentWord.substring(0, charIndex));
+            setTimeout(type, deleteSpeed);
+        } else {
+            charIndex++;
+            updateText(words[wordIndex].substring(0, charIndex));
+            
+            if (charIndex >= words[wordIndex].length) {
+                isDeleting = true;
+                isPaused = true;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+    }
+    
+    // Start the typewriter effect after initial animations complete
+    setTimeout(type, 2000);
 }
 
