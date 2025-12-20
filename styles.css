@@ -229,14 +229,8 @@ body.cursor-hover .cursor-follower {
 .cursor {
     display: inline-block;
     color: var(--blue-bright);
-    animation: blink 0.8s infinite;
     font-weight: 400;
     margin-left: 0.05em;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
 }
 
 @keyframes titleReveal {
