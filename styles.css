@@ -175,25 +175,25 @@ body.cursor-hover .cursor-follower {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 12vw, 10rem);
+    font-size: clamp(2.8rem, 12vw, 10rem);
     font-weight: 800;
     line-height: 0.9;
     letter-spacing: -0.03em;
     margin-bottom: 2rem;
     position: relative;
-    /* Fade edges to black using mask */
+    /* Subtle fade edges to black using mask */
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
-        black 15%,
-        black 85%,
+        black 6%,
+        black 94%,
         transparent 100%
     );
     mask-image: linear-gradient(
         to right,
         transparent 0%,
-        black 15%,
-        black 85%,
+        black 6%,
+        black 94%,
         transparent 100%
     );
 }
@@ -1263,7 +1263,7 @@ body.cursor-hover .cursor-follower {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: clamp(2rem, 14vw, 3.5rem);
+        font-size: clamp(2rem, 14vw, 2.5rem);
     }
     
     .hero-subtitle {
