@@ -1013,6 +1013,22 @@ body.cursor-hover .cursor-follower {
     background: rgba(236, 72, 153, 0.1);
 }
 
+/* Project - Silver (Weighvy) */
+.project-card[data-project="silver"]:hover {
+    border-color: #C0C0C0;
+}
+.project-card[data-project="silver"]::before {
+    background: linear-gradient(180deg, #E8E8E8, #A8A8A8);
+}
+.project-card[data-project="silver"]:hover .project-number,
+.project-card[data-project="silver"]:hover .project-link {
+    color: #D4D4D4;
+}
+.project-card[data-project="silver"]:hover .p-cube-face {
+    border-color: #C0C0C0;
+    background: rgba(192, 192, 192, 0.15);
+}
+
 .project-number {
     font-family: var(--font-mono);
     font-size: 0.75rem;
