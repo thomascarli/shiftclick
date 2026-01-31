@@ -1029,6 +1029,22 @@ body.cursor-hover .cursor-follower {
     background: rgba(192, 192, 192, 0.15);
 }
 
+/* Project - Forest/Olive Green (Hearmuffin) */
+.project-card[data-project="forest"]:hover {
+    border-color: #6B8E23;
+}
+.project-card[data-project="forest"]::before {
+    background: #6B8E23;
+}
+.project-card[data-project="forest"]:hover .project-number,
+.project-card[data-project="forest"]:hover .project-link {
+    color: #8FAD3A;
+}
+.project-card[data-project="forest"]:hover .p-cube-face {
+    border-color: #6B8E23;
+    background: rgba(107, 142, 35, 0.15);
+}
+
 .project-number {
     font-family: var(--font-mono);
     font-size: 0.75rem;
